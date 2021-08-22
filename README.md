@@ -26,7 +26,7 @@ To install this file, just download from the arrow above and extract it into you
 > Run this into your terminal while you're on your desired directory.
 
 ```bash
-git install https://github.com/Rezy-Dev/junk-files-killer.git
+git clone https://github.com/Rezy-Dev/junk-files-killer.git
 ```
 
 ## Supported OS
