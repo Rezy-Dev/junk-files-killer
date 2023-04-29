@@ -1,43 +1,30 @@
-# JUNK FILE KILLER
 
-This bat file clears all of those junk files from your computer and boosts performance for daily tasks. This program will clear the following files from your computer:
-1. Temporary Internet Files
-2. Prefetch folder data
-3. Temp folder data
-4. Cookies
-5. History
-6. Windows Internet Explorer Dat Files
-7. Windows Error Reporting Files
-8. Flash Player Temp Files
-9. Remote Desktop Cache
-10. Profile Temp Files
-11. FireFox Cache
-12. User Profile Adobe Temp Files
-13. User Office Recent Files
-14. User Office TMP Files
-15. Recycle Bin
-16. Recent Items
+# Junk File Cleaner
 
-## Installation
+Junk File Cleaner is a command-line utility that can quickly clean up your Windows PC of unnecessary files that accumulate over time, including temporary files, cache files, cookies, and other types of junk. By deleting these files, you can free up disk space, improve system performance, and make your computer healthier overall.
 
-To install this file, just download from the arrow above and extract it into your desired location.
+## Features
 
-**OR**
-> Run this into your terminal while you're on your desired directory.
+Some of the key features of Junk File Cleaner include:
 
-```bash
-git clone https://github.com/Rezy-Dev/junk-files-killer.git
-```
+-   Support for a wide range of file types and directories
+-   Quick and easy to use command-line interface
+-   Automatically prompts the user for confirmation before deleting files
+-   Deletes files securely and permanently to prevent recovery
+-   Free and open source software under the MIT license
 
-## Supported OS
+## Benefits
 
-1. Windows OS (98, Vista, XP, 7, 8, 8.1, 10, 11) - *more update soon on this file for windows 11 support as the new OS might have some more temp files inside the system file, will add 100% support to windows 11 after windows 11 releases completely* - *still works for windows 11 but still more junk files locations must have to be added*
-2. Linux - *work in progress* - *new program will be made for this*
-3. Mac OS - *work in progress* - *new program will be made for this*
+By using Junk File Cleaner to regularly clean up your system, you can experience a range of benefits, including:
 
-## Usage
+-   Improved overall system performance, as less disk space is used for temporary and unnecessary files
+-   Faster boot and shutdown times, as the system doesn't need to process as many files during these operations
+-   Improved gaming performance, as fewer resources are used by the system, allowing for more resources to be allocated to the game
+-   Faster browsing performance, as fewer resources are used by the system, allowing for faster page load times
+-   Reduced risk of malware and viruses, as some types of malware can hide in temporary files and other types of junk that are removed by Junk File Cleaner
 
-After installing the bat file, you can just double click the file and it will automatically do its task.
+## Installing and Using Junk File Cleaner
 
-## DISCLAMER
-If you have any kind of important files in any of the folders which are mentioned on the list of files to be deleted, make sure to take a backup of all of those files. Mainly **RECYCLE BIN**. You might have any kind of important files in recycle bin so make sure to take backup, this program will clear the recycle bin. Mostly people don't store any kind of important files in any other directory so everything else must be ok. Once a file from recycle bin is deleted through this program IT IS IMPOSSIBLE to recover them back. It's **PERMANENT**.
+To use Junk File Cleaner, simply download the latest release from the GitHub repository and extract the files to a convenient location on your computer. From there, open a command prompt window and navigate to the directory where you extracted the files. Then, simply run the "junk-file-cleaner.bat" file, which will prompt you to confirm that you want to delete junk files before proceeding.
+
+If you want to automate the process of cleaning up junk files, you can also create a scheduled task in Windows to run Junk File Cleaner on a regular basis, such as once a week or once a month. This can help ensure that your system stays clean and healthy over time, without requiring manual intervention on your part.
