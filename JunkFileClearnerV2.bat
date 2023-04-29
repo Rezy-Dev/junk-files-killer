@@ -1,69 +1,43 @@
 @echo off
-echo Welcome to Junk File Cleaner By Rezy Dev!
-timeout 5 >nul
 
-if "%OS%"=="Windows_NT" (
-    echo .Using a Windows NT based system
-    echo ..%COMPUTERNAME%
-) else (
-    echo Error: Invalid Operating System
-    goto END
+rem Display welcome message
+echo Hello, Welcome to Junk File Cleaner by Rezy#8811
+
+rem Wait 5 seconds with countdown
+for /l %%i in (1,1,5) do (
+  echo.
+  echo Deleting junk files in %%i seconds...
+  timeout 1 >nul
 )
 
-echo Deleting Temporary Internet Files...
-del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*.*"
-del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\INetCache\*.*"
-del /q /f /s "%TEMP%\*.*"
-echo Temporary Internet Files deleted!
+rem Ask permission to delete junk files
+echo.
+echo Are you sure you want to delete all junk files? (Y/N)
+set /p answer="Your answer: "
 
-echo Deleting Prefetch folder data...
-del /q /f /s "%systemroot%\Prefetch\*.*"
-echo Prefetch folder data deleted!
-
-echo Deleting Temp folder data...
-del /q /f /s "%systemroot%\Temp\*.*"
-echo Temp folder data deleted!
-
-echo Deleting Cookies...
-del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Cookies\*.*"
-del /q /f /s "%USERPROFILE%\AppData\LocalLow\Microsoft\Internet Explorer\DOMStore\*.*"
-echo Cookies deleted!
-
-echo Deleting History...
-del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\History\*.*"
-del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Internet Explorer\Recovery\Active\*.*"
-del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Internet Explorer\Recovery\Last Active\*.*"
-echo History deleted!
-
-echo Deleting Windows Internet Explorer Dat Files...
-del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\PrivacIE\*.*"
-del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\IECompatCache\*.*"
-del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\IETldCache\*.*"
-echo Windows Internet Explorer Dat Files deleted!
-
-echo Deleting Windows Error Reporting Files...
-del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\WER\ReportArchive\*.*"
-echo Windows Error Reporting Files deleted!
-
-echo Deleting Flash Player Temp Files...
-del /q /f /s "%USERPROFILE%\AppData\Roaming\Macromedia\Flash Player\*.*"
-echo Flash Player Temp Files deleted!
-
-echo Deleting Remote Desktop Cache...
-del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Terminal Server Client\Cache\*.*"
-echo Remote Desktop Cache deleted!
-
-echo Deleting Profile Temp Files...
-del /q /f /s "%USERPROFILE%\AppData\Local\Temp\*.*"
-echo Profile Temp Files deleted!
-
-echo Deleting FireFox Cache...
-pushd "%USERPROFILE%\AppData\Local\Mozilla\Firefox\Profiles\*.default\"
-del /q /f /s "Cache\*.*"
-popd
-echo FireFox Cache deleted!
-
-echo Deleting User Profile Adobe Temp Files...
-del /q /f /s "%USERPROFILE%\AppData\LocalLow\Adobe\Acrobat\9.0\Search\*.*"
-del /q /f /s "%USERPROFILE%\AppData\LocalLow\Adobe\Common\Media Cache Files\*.*"
-del /q /f /s "%USERPROFILE%\AppData\LocalLow\Adobe\Common\Media Cache\*.*
+rem If user presses Y, delete junk files
+if "%answer%"=="Y" (
+  echo Deleting junk files...
+  del /f /q /s "%TEMP%\*"
+  del /f /q /s "%USERPROFILE%\AppData\Local\Temp\*"
+  del /f /q /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*"
+  del /f /q /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\INetCache\*"
+  del /f /q /s "%systemroot%\Prefetch\*"
+  del /f /q /s "%systemroot%\Temp\*"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Cookies\*"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\History\*"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\PrivacIE\*"
+  del /f /q /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\WER\ReportArchive\*"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Macromedia\Flash Player\*"
+  del /f /q /s "%USERPROFILE%\AppData\Local\Microsoft\Terminal Server Client\Cache\*"
+  del /f /q /s "%USERPROFILE%\AppData\Local\Temp\*"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*.default\Cache\*"
+  del /f /q /s "%USERPROFILE%\AppData\LocalLow\Adobe\Acrobat\9.0\Search\*"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Microsoft\Office\Recent\*"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Microsoft\Office\*.tmp"
+  rd /s /q "%systemdrive%\$Recycle.bin"
+  del /f /q /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\*"
+  echo Junk files deleted!
+) else (
+  echo Junk files not deleted.
+)
